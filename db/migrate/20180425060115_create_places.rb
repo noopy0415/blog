@@ -2,7 +2,11 @@ class CreatePlaces < ActiveRecord::Migration[5.1]
   def change
     create_table :places do |t|
       t.string :name
-      t.text :body
+      t.string :area
+      t.float :lat
+      t.float :lng
+      t.text :info
+
 
       t.timestamps
     end

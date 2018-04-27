@@ -4,7 +4,8 @@ class CreateTasks < ActiveRecord::Migration[5.1]
       t.integer :produce_id
       t.integer :work_id
       t.integer :place_id
-      t.integer :material_id
+      t.integer :chemical_id
+      t.date :date
       t.string :title
       t.text :body
 

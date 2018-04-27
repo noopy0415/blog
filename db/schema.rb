@@ -10,25 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180425060130) do
+ActiveRecord::Schema.define(version: 20180427093602) do
 
-  create_table "materials", force: :cascade do |t|
-    t.string "name"
-    t.text "body"
+  create_table "chemicals", force: :cascade do |t|
+    t.string "neme"
+    t.string "item"
+    t.text "info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "places", force: :cascade do |t|
     t.string "name"
-    t.text "body"
+    t.string "area"
+    t.float "lat"
+    t.float "lng"
+    t.text "info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "produces", force: :cascade do |t|
     t.string "name"
-    t.text "body"
+    t.string "item"
+    t.text "info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "task_users", force: :cascade do |t|
+    t.integer "task_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -37,7 +49,8 @@ ActiveRecord::Schema.define(version: 20180425060130) do
     t.integer "produce_id"
     t.integer "work_id"
     t.integer "place_id"
-    t.integer "material_id"
+    t.integer "chemical_id"
+    t.date "date"
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
@@ -47,6 +60,7 @@ ActiveRecord::Schema.define(version: 20180425060130) do
   create_table "works", force: :cascade do |t|
     t.string "name"
     t.text "body"
+    t.text "info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
