@@ -1,0 +1,18 @@
+<h1>作業一覧</h1>
+<%= button_to :create, new_work_path, method: :get %>
+<table border="thin">
+  <tr>
+    <th>作業名</th>
+    <th>内容</th>
+    <th>備考</th>
+    <th>修正</th>
+  </tr>
+  <% @works.each do |work| %>
+    <tr>
+      <td><%= work.name %></td>
+      <td><%= work.body %></td>
+      <td><%= work.info %></td>
+      <td><%= button_to :update, edit_work_path(work), method: :get %>
+    </tr>
+  <% end %>
+</table>

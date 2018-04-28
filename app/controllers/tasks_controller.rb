@@ -4,6 +4,29 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = task.new
+    @task = Task.new
+    @task_user = TaskUser.new
+    @task.date = Date.today
   end
+
+  def create
+
+  end
+
+  def show
+
+  end
+
+  def edit
+
+  end
+
+  def update
+
+  end
+
+  def destroy
+
+  end
+
 end
