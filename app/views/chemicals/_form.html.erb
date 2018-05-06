@@ -1,0 +1,18 @@
+<%= form_with model: @chemical do |form| %>
+  <div class="form-groop">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="form-groop">
+    <%= form.label :item %>
+    <%= form.text_field :item %>
+  </div>
+  <div class="form-groop">
+    <%= form.label :info %>
+    <%= form.text_field :info %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+<%= button_to :return, chemicals_path, method: :get%>

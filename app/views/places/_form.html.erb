@@ -1,0 +1,26 @@
+<%= form_with model: @place do |form| %>
+  <div class="form-groop">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="form-groop">
+    <%= form.label :area %>
+    <%= form.text_field :area %>
+  </div>
+  <div class="form-groop">
+    <%= form.label :lat %>
+    <%= form.text_field :lat %>
+  </div>
+  <div class="form-groop">
+    <%= form.label :lng %>
+    <%= form.text_field :lng %>
+  </div>
+  <div class="form-groop">
+    <%= form.label :info %>
+    <%= form.text_field :info %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+<%= button_to :return, places_path, method: :get%>

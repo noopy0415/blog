@@ -1,32 +1,7 @@
 Rails.application.routes.draw do
   resources :works
-  get 'chemicals/index'
-
-  get 'chemicals/new'
-
-  get 'chemicals/create'
-
-  get 'chemicals/show'
-
-  get 'chemicals/edit'
-
-  get 'chemicals/update'
-
-  get 'chemicals/destroy'
-
-  get 'places/index'
-
-  get 'places/new'
-
-  get 'places/create'
-
-  get 'places/show'
-
-  get 'places/edit'
-
-  get 'places/update'
-
-  get 'places/destroy'
+  resources :chemicals
+  resources :places
 
   get 'produces/index'
 
