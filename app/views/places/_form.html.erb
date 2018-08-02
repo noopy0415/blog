@@ -7,6 +7,19 @@
     <%= form.label :item %>
     <%= form.text_field :area %>
   </div>
+  #map {
+    height: 90%;
+  }
+  <script>
+  var map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 39.307, lng: 141.000},
+        zoom: 10
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvebPdYJNeIvQD7PHKeI2pIh0Tmlzabso&callback=initMap" async defer></script>
   <div class="form-groop">
     <%= form.label :info %>
     <%= form.text_field :info %>

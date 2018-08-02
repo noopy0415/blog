@@ -1,19 +1,29 @@
-form.html.erb
 <%= form_with(model: @task, local: true) do |form| %>
-  <%= form.label :task_date %>
-  <%= form.date_select @task.date, use_month_numbers:true	%>
-  <%= form.label :task_user %>
-  <%= form.collection_select @task.task_user, User.all, :id, :name, { include_blank: "選択してください" },  { class: "form-control" }	%>
-  <%= form.label :place %>
-  <%= form.collection_select @task.place_id, Place.all, :id, :name, { include_blank: "選択してください"}	%>
-  <%= form.label :produce %>
-  <% Produce.all.each do |p| %>
-    <%= form.radio_button p.id, p.id %>
-    <%= p.name %>
-  <% end %>
-  <%= form.label :work %>
-  <%= form.collection_select @task.work_id, Work.all, :id, :name, { include_blank: "選択してください"}	%>
-  <%= form.label :body %>
-  <%= form.text_area @task.body %>
-
+  <div class="form-group">
+    <%= form.label :task_date %>
+    <%= form.date_select @task.date, use_month_numbers:true	%>
+  </div>
+  <div class="form-group">
+    <%= form.label :task_user %>
+    <%= form.collection_select @task.task_user, User.all, :id, :name, { include_blank: "選択してください" },  { class: "form-control" }	%>
+  </div>
+  <div class="form-group">
+    <%= form.label :place %>
+    <%= form.collection_select @task.place_id, Place.all, :id, :name, { include_blank: "選択してください"}	%>
+  </div>
+  <div class="form-group">
+    <%= form.label :produce %>
+    <% Produce.all.each do |p| %>
+      <%= form.radio_button p.id, p.id %>
+      <%= p.name %>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <%= form.label :work %>
+    <%= form.collection_select @task.work_id, Work.all, :id, :name, { include_blank: "選択してください"}	%>
+  </div>
+  <div class="form-group">
+    <%= form.label :body %>
+    <%= form.text_area @task.body %>
+  </div>
 <% end %>

@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   resources :chemicals
   resources :places
   resources :produces
-  devise_for :users
   resources :tasks
   root "tasks#index"
+  # devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
 end
